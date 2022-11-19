@@ -38,6 +38,7 @@ function Post(props) {
   const [like, setLike] = React.useState("");
   const [iconeLike, setIconeLike] = React.useState("heart-outline");
   const [numberLikes, setNumberLikes] = React.useState(Math.random() * 10000);
+  const [show, setShow] = React.useState("show")
   function savePost() {
     if (icone == "bookmark") {
       setIcone("bookmark-outline");
@@ -57,15 +58,23 @@ function Post(props) {
       paraDeLike = undefined
     }
   }
-    function gostei() {
+  function gostei() {
     if(like == ""){
       likePost()
+      setShow("")
+      setTimeout(aparece, 400)
     }else{
-      return
+      setShow("")
+      setTimeout(aparece, 400)
     }
-    
+    function aparece(){
+      setShow("show")
+    }
   }
-  return (
+  function Coracao(props){
+    return(<ion-icon id={props.show} class="white big" name="heart" ></ion-icon> )}
+  
+    return (
     <div data-test="post" class="post">
       <div class="topo">
         <div class="usuario">
@@ -79,6 +88,7 @@ function Post(props) {
 
       <div onDoubleClick={gostei} class="conteudo">
         <img src={props.postContent} />
+        <Coracao show={show}/>
       </div>
 
       <div class="fundo">

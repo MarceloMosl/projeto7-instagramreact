@@ -179,7 +179,9 @@ body {
 .post .usuario, .post .topo img, .post .fundo img, .post ion-icon, .post strong, .usuario ion-icon, .usuario > img, .conteudo > img {
   cursor: pointer;
 }
-
+.conteudo{
+  position: relative;
+}
 .post .conteudo img {
   width: 100%;
 }
@@ -310,10 +312,21 @@ body {
   display: none !important;
 }
 .red{
-  color: red;
+  color: rgb(255, 0, 0);
 }
 .white{
   color: white;
+}
+.big{
+  font-size: 150px;
+  position: absolute;
+  top: 40%;
+  left: 37%;
+  transition: all ease-in-out 2s white;
+  transition-delay: 0s;
+}
+#show{
+  display: none;
 }
 @media (max-width: 935px) {
   .sidebar {
