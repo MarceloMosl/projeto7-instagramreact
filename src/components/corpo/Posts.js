@@ -44,6 +44,12 @@ function Post(props) {
       setIcone("bookmark");
     }
   }
+  let paraDeDarLikeCorno;
+  function gostei(){
+    setLike("red");
+    setIconeLike("heart")
+    setNumberLikes(numberLikes + 1)
+  }
   function likePost() {
     if(like == ""){
       setLike("red");
@@ -52,7 +58,8 @@ function Post(props) {
     }else{
       setLike("")
       setIconeLike("heart-outline")
-      setNumberLikes(numberLikes - 1)   }
+      setNumberLikes(numberLikes - 1)
+    }
   }
 
   return (
@@ -67,7 +74,7 @@ function Post(props) {
         </div>
       </div>
 
-      <div class="conteudo">
+      <div onClick={gostei} class="conteudo">
         <img src={props.postContent} />
       </div>
 
