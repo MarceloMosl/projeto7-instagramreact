@@ -37,13 +37,13 @@ export default function Sidebar() {
   }
   function Usuario(props) {
     return (
-      <div class="usuario">
-        <img onClick={changeImg} src={props.img} />
+      <div data-test="user" class="usuario">
+        <img data-test="profile-img" onClick={changeImg} src={props.img} />
         <div class="texto">
           <strong>catanacomics</strong>
-          <span>
+          <span data-test="name">
             {props.nickName}
-            <ion-icon onClick={changeUser} name="pencil"></ion-icon>
+            <ion-icon data-test="edit-name" onClick={changeUser} name="pencil"></ion-icon>
           </span>
         </div>
       </div>

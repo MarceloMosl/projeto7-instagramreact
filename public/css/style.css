@@ -309,7 +309,12 @@ body {
 .logo-mobile, .instagram-mobile {
   display: none !important;
 }
-
+.red{
+  color: red;
+}
+.white{
+  color: white;
+}
 @media (max-width: 935px) {
   .sidebar {
     display: none;
