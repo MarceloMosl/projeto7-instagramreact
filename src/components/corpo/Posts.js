@@ -45,16 +45,6 @@ function Post(props) {
       setIcone("bookmark");
     }
   }
-  function gostei() {
-    if(paraDeLike === undefined && like == ""){
-    setLike("red");
-    setIconeLike("heart");
-    setNumberLikes(numberLikes + 1)
-    paraDeLike = 1;
-  }else{
-      return;
-    }
-  }
   function likePost() {
     if (like == "") {
       setLike("red");
@@ -67,7 +57,14 @@ function Post(props) {
       paraDeLike = undefined
     }
   }
-
+    function gostei() {
+    if(like == ""){
+      likePost()
+    }else{
+      return
+    }
+    
+  }
   return (
     <div data-test="post" class="post">
       <div class="topo">
